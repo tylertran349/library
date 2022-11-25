@@ -1,0 +1,213 @@
+* {
+    --border-radius-value: 0.5rem;
+}
+
+html {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0eef1;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+#header-container {
+    background: white;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#header-container span {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 12rem;
+}
+
+#content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+}
+
+#content-header #add-book-btn {
+    font-family: inherit;
+    font-size: 2.4rem;
+    padding: 0;
+    border: 0;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+}
+
+#books-container {
+    width: 66.67%;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 4rem;
+}
+
+#book {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: var(--border-radius-value);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    aspect-ratio: 4/3;
+    font-size: 2rem;
+}
+
+#book span {
+    width: 90%;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#book #title {
+    font-style: italic;
+}
+
+#book #status {
+    width: 90%;
+    padding: 0.75rem 0 0.75rem 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background: #ff9c9c;
+    border: 0;
+    border-radius: inherit;
+}
+
+#book #remove {
+    width: 90%;
+    padding: 0.75rem 0 0.75rem 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background: #f0eef1;
+    border: 0;
+    border-radius: inherit;
+}
+
+#add-book-overlay {
+    position: fixed;
+    display: none; /* display: none makes overlay disappear */
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-book-overlay #form {
+    width: 15%;
+    height: 45%;
+    background: white;
+    border-radius: var(--border-radius-value);
+}
+
+#add-book-overlay fieldset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#add-book-overlay #form input[type="text"], #add-book-overlay #form input[type="number"] {
+    font-family: inherit;
+    font-size: inherit;
+    width: 80%;
+    border: none;
+}
+
+#add-book-overlay #form input[type="text"], #add-book-overlay #form input:focus {
+    outline: none;
+}
+
+#add-book-overlay #form li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+#add-book-overlay #form li input[type="checkbox"] {
+    width: 2rem;
+    aspect-ratio: 1/1;
+}
+
+#add-book-overlay #form button[id="submit-button"] {
+    font-family: inherit;
+    font-size: 1.6rem;
+    width: 80%;
+    background: #9fff9c;
+    border: none;
+    border-radius: var(--border-radius-value);
+    padding: 0.75rem 0 0.75rem 0;
+    font-weight: inherit;
+}
+
+#add-book-overlay #form button[id="submit-button"]:active {
+    background: #5bfd56;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: inherit;
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer a[target="_blank"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* GitHub footer icon styling */
+.fa-github {
+    color: black;
+    font-size: 2.0rem;
+    transition: transform 0.3s ease-in-out;
+}
+  
+/* GitHub footer icon animation on hover */
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
