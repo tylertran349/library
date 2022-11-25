@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Library</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script> <!-- Import GitHub footer icon from Font Awesome -->
+    </head>
+    <body>
+        <script src="script.js" defer></script>
+        <div id="add-book-overlay">
+            <form id="form" action="" method="post">
+                <fieldset>
+                    <span>Add new book</span>
+                    <input id="title-input" type="text" placeholder="Title" name="title" required>
+                    <input id="author-input" type="text" placeholder="Author" name="author" required>
+                    <input id="pages-input" type="number" placeholder="Pages" name="pages" min="1" max="10000" required>
+                    <li id="checkbox-container">
+                        <label id="status-input" for="status_checkbox" style="word-wrap:break-word">Have you read it?&nbsp;&nbsp;</label>
+                        <input type="checkbox" id="status-checkbox" name="status">
+                    </li>
+                    <button id="submit-button" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div id="header-container">
+            <span>Library</span>
+        </div>
+        <div id="content">
+            <div id="content-header">
+                <button id="add-book-btn">+ Add book</button>
+            </div>
+            <div id="books-container">
+            </div>
+        </div>
+        <div id="footer">Copyright © 2022 Tyler Tran&ensp;<a href="https://github.com/tylertran349" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+    </body>
+</html>
