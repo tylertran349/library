@@ -107,6 +107,10 @@ body {
     border-radius: inherit;
 }
 
+#book #remove:active {
+    background: #d7d4d8;
+}
+
 #add-book-overlay {
     position: fixed;
     display: none; /* display: none makes overlay disappear */
