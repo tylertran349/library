@@ -12,18 +12,16 @@
     <body>
         <script src="script.js" defer></script>
         <div id="add-book-overlay">
-            <form id="form" action="" method="post">
-                <fieldset>
-                    <span>Add new book</span>
-                    <input id="title-input" type="text" placeholder="Title" name="title" required>
-                    <input id="author-input" type="text" placeholder="Author" name="author" required>
-                    <input id="pages-input" type="number" placeholder="Pages" name="pages" min="1" max="10000" required>
-                    <li id="checkbox-container">
-                        <label id="status-input" for="status_checkbox" style="word-wrap:break-word">Have you read it?&nbsp;&nbsp;</label>
-                        <input type="checkbox" id="status-checkbox" name="status">
-                    </li>
-                    <button id="submit-button" type="submit">Submit</button>
-                </fieldset>
+            <form id="form" action="" method="post" onsubmit="event.preventDefault(); return submitFunction();">
+                <span>Add new book</span>
+                <input id="title-input" type="text" placeholder="Title" name="title" required>
+                <input id="author-input" type="text" placeholder="Author" name="author" required>
+                <input id="pages-input" type="number" placeholder="Pages" name="pages" min="1" max="10000" required>
+                <li id="checkbox-container">
+                    <label id="status-input" for="status_checkbox" style="word-wrap:break-word">Have you read it?&nbsp;&nbsp;</label>
+                    <input type="checkbox" id="status-checkbox" name="status">
+                </li>
+                <button id="submit-button" type="submit">Submit</button>
             </form>
         </div>
         <div id="header-container">
