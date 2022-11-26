@@ -171,6 +171,10 @@ body {
     aspect-ratio: 1/1;
 }
 
+#add-book-overlay #form li input[type="checkbox"]:checked {
+    accent-color: #f0eef1;
+}
+
 #add-book-overlay #form button[id="submit-button"] {
     font-family: inherit;
     font-size: 1.6rem;
@@ -190,12 +194,18 @@ body {
     width: 100%;
     text-align: center;
     color: inherit;
-    font-size: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 11.5rem;
-    padding-bottom: 0.5rem;
+    height: 12rem;
+}
+
+#footer-contents {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 #footer a[target="_blank"] {
