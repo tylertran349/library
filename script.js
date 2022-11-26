@@ -123,10 +123,11 @@ addBookButton.addEventListener('click', () => {
     addBookOverlay.style.display = "flex";
 });
 
+// When form is submitted, add the new book, reset the form input values, and hide the add book overlay
 function submitFunction() {
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, statusInput.checked);
     form.reset(); // Reset form input values
-    addBookOverlay.style.display = "none"; // Hide add book overlay once submit button is pressed
+    addBookOverlay.style.display = "none"; // Hide add book overlay
 }
 
 addBookOverlay.addEventListener('click', function(event){
