@@ -101,7 +101,6 @@ function addBookToLibrary(title, author, pages, status) {
     temp = new Book(title, author, pages, status);
     myLibrary.push(temp); // Add book to myLibrary array
     printBooksToScreen(); // Print new book list to screen
-    return;
 }
 
 function printBooksToScreen() {
@@ -124,12 +123,11 @@ addBookButton.addEventListener('click', () => {
     addBookOverlay.style.display = "flex";
 });
 
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent submit button from submitting a form
+function submitFunction() {
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, statusInput.checked);
     form.reset(); // Reset form input values
     addBookOverlay.style.display = "none"; // Hide add book overlay once submit button is pressed
-});
+}
 
 addBookOverlay.addEventListener('click', function(event){
   if (addBookOverlay !== event.target) {
