@@ -94,7 +94,6 @@ function addBookToScreen(obj, index) {
 
     // Add book div (child node) to content div (parent node)
     booksContainer.appendChild(bookDiv);
-
 }
 
 function addBookToLibrary(title, author, pages, status) {
