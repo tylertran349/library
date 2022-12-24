@@ -129,8 +129,8 @@ body {
 }
 
 #add-book-overlay #form {
-    width: 15%;
-    height: 45%;
+    width: 12%;
+    min-height: 45%;
     background: white;
     border-radius: var(--border-radius-value);
     display: flex;
@@ -140,13 +140,14 @@ body {
     font-size: 2rem;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
+    gap: 2rem;
 }
 
 #add-book-overlay #form input[type="text"], #add-book-overlay #form input[type="number"] {
     font-family: inherit;
     font-size: inherit;
-    width: 80%;
+    width: 100%;
     border: none;
 }
 
@@ -173,7 +174,7 @@ body {
 #add-book-overlay #form button[id="submit-button"] {
     font-family: inherit;
     font-size: 1.6rem;
-    width: 80%;
+    width: 100%;
     background: #9fff9c;
     border: none;
     border-radius: var(--border-radius-value);
@@ -183,6 +184,16 @@ body {
 
 #add-book-overlay #form button[id="submit-button"]:active {
     background: #5bfd56;
+}
+
+#title-error, #author-error, #pages-error {
+    display: none; /* Hides error message by default */
+    background: red;
+    color: white;
+    width: 100%;
+    padding: 0.25rem;
+    border-radius: 0 0 var(--border-radius-value) var(--border-radius-value);
+    margin-top: -2rem;
 }
 
 #footer {
