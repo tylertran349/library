@@ -130,7 +130,6 @@ function submitFunction() {
 
     if(!titleInput.validity.valid || !authorInput.validity.valid || !pagesInput.validity.valid) {
         if(titleInput.validity.valueMissing) {
-            console.log("Title is missing");
             titleError.textContent = "You must enter a title.";
             titleError.style.display = "flex";
         } else {
@@ -138,7 +137,6 @@ function submitFunction() {
         }
 
         if(authorInput.validity.valueMissing) {
-            console.log("Author is missing");
             authorError.textContent = "You must enter an author.";
             authorError.style.display = "flex";
         } else {
@@ -146,15 +144,12 @@ function submitFunction() {
         }
 
         if(pagesInput.validity.valueMissing) {
-            console.log("Page count is missing");
             pagesError.textContent = "You must enter a number.";
             pagesError.style.display = "flex";
         } else if(pagesInput.validity.rangeUnderflow) {
-            console.log("Page count is too low");
             pagesError.textContent = "You must enter a number greater than or equal to 1.";
             pagesError.style.display = "flex";
         } else if(pagesInput.validity.rangeOverflow) {
-            console.log("Page count is too low");
             pagesError.textContent = "You must enter a number less than or equal to 10000.";
             pagesError.style.display = "flex";
         } else {
