@@ -124,12 +124,56 @@ addBookButton.addEventListener('click', () => {
 
 // When form is submitted, add the new book, reset the form input values, and hide the add book overlay
 function submitFunction() {
+    const titleError = document.querySelector('#title-error');
+    const authorError = document.querySelector('#author-error');
+    const pagesError = document.querySelector('#pages-error');
+
+    if(!titleInput.validity.valid || !authorInput.validity.valid || !pagesInput.validity.valid) {
+        if(titleInput.validity.valueMissing) {
+            console.log("Title is missing");
+            titleError.textContent = "You must enter a title.";
+            titleError.style.display = "flex";
+        } else {
+            titleError.style.display = "none"; // Hide title error message if title is valid
+        }
+
+        if(authorInput.validity.valueMissing) {
+            console.log("Author is missing");
+            authorError.textContent = "You must enter an author.";
+            authorError.style.display = "flex";
+        } else {
+            authorError.style.display = "none"; // Hide author error message if author is valid
+        }
+
+        if(pagesInput.validity.valueMissing) {
+            console.log("Page count is missing");
+            pagesError.textContent = "You must enter a number.";
+            pagesError.style.display = "flex";
+        } else if(pagesInput.validity.rangeUnderflow) {
+            console.log("Page count is too low");
+            pagesError.textContent = "You must enter a number greater than or equal to 1.";
+            pagesError.style.display = "flex";
+        } else if(pagesInput.validity.rangeOverflow) {
+            console.log("Page count is too low");
+            pagesError.textContent = "You must enter a number less than or equal to 10000.";
+            pagesError.style.display = "flex";
+        } else {
+            pagesError.style.display = "none"; // Hide pages error message if page count is valid
+        }
+        return; // Break out of function if any part of the form is invalid
+    }
+
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, statusInput.checked);
     form.reset(); // Reset form input values
     addBookOverlay.style.display = "none"; // Hide add book overlay
+    
+    /* Hide all form error messages if the whole form is successfully submitted (no validation errors) */
+    titleError.style.display = "none";
+    authorError.style.display = "none"; 
+    pagesError.style.display = "none"; 
 }
 
-addBookOverlay.addEventListener('click', function(event){
+addBookOverlay.addEventListener('click', function(event) {
   if (addBookOverlay !== event.target) {
     return;
   } else {
